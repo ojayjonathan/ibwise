@@ -16,45 +16,48 @@
      One Page Navigation
      ========================================================================== */
     document.addEventListener('DOMContentLoaded', function () {
-        const body = document.body;
         const fixedTop = document.querySelector('.fixed-top');
+        const navigationLinks = document.querySelectorAll(".main-nav .page-scroll")
+
         toggleClass(fixedTop, 'menu-bg', window.scrollY > 100);
-        
+
         function onScroll() {
             toggleClass(fixedTop, 'menu-bg', window.scrollY > 100);
         }
 
-        body.addEventListener('scroll', onScroll);
-
         window.addEventListener('scroll', onScroll);
 
-        /* Auto Close Responsive Navbar on Click
-        ========================================================*/
-        function closeToggle() {
-            const navbarCollapseLinks = document.querySelectorAll('.navbar-collapse a');
-            const navbarCollapse = document.querySelector('.navbar-collapse');
 
-            if (window.innerWidth <= 768) {
-                navbarCollapseLinks.forEach(function (link) {
-                    link.addEventListener('click', function () {
-                        if (navbarCollapse) {
-                            navbarCollapse.classList.remove('show');
-                        }
-                    });
-                });
-            } else {
-                navbarCollapseLinks.forEach(function (link) {
-                    link.removeEventListener('click', function () {
-                        if (navbarCollapse) {
-                            navbarCollapse.classList.remove('show');
-                        }
-                    });
-                });
-            }
-        }
+        let burger = document.getElementById('burger'),
+            nav = document.getElementById('main-nav')
 
-        closeToggle();
-        window.addEventListener('resize', closeToggle);
+        burger.addEventListener('click', function (e) {
+            this.classList.toggle('is-open');
+            nav.classList.toggle('is-open');
+        });
+
+        navigationLinks.forEach(entry => {
+            entry.addEventListener("click", (e) => {
+
+                e.preventDefault()
+                // Remove active 
+                navigationLinks.forEach(entry => {
+                    entry.classList.remove("active")
+                });
+                //
+                entry.classList.add("active")
+                nav.classList.remove("is-open")
+                burger.classList.remove("is-open")
+
+                const targetId = entry.getAttribute("href").substring(1);
+                const targetElement = document.getElementById(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({ behavior: "smooth", block: "start" });
+                }
+            })
+        })
     });
+
+
 
 }());

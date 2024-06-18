@@ -12,6 +12,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="./static/css/mobile-navigation.css">
 </head>
 
 <body>
@@ -20,37 +21,41 @@
             <span></span>
             <span></span>
         </div>
-        <nav class="navbar navbar-expand-md bg-inverse fixed-top scrolling-navbar menu-bg">
-            <div class="container">
+        <div class="navbar navbar-expand-md bg-inverse fixed-top scrolling-navbar">
+            <div class="container mx-auto d-flex align-items-center justify-content-space-between">
                 <a href="#home" class="navbar-brand px-2"><img src="./static/images/Ibwise.svg" alt="Ibwise Logo"></a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
-                    aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                    <i class="lni-menu">
-                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
-                            fill="#e8eaed">
-                            <path d="M160-360v-80h640v80H160Zm0-160v-80h640v80H160Z" />
-                        </svg>
-                    </i>
+                <button id="burger" class="open-main-nav">
+                    <span class="burger"></span>
+                    <span class="burger-text">Menu</span>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarCollapse">
-                    <ul class="navbar-nav mr-auto w-100 justify-content-end">
-                       
-                        <li class="nav-item">
-                            <a class="nav-link page-scroll" href="#about">About</a>
-                        </li>
-                      
-                    
-                        <li class="nav-item">
-                            <a class="nav-link page-scroll" href="#courses">Courses</a>
-                        </li>
-                      
-                        <li class="nav-item">
-                            <a class="nav-link page-scroll active" href="#contact">Contact</a>
-                        </li>
-                    </ul>
-                </div>
             </div>
-        </nav>
+            <nav class="main-nav" id="main-nav">
+                <ul>
+                    <li class="nav-item">
+                        <a class="page-scroll" href="#home" class="active">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="page-scroll" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="page-scroll" href="#courses">Courses</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="page-scroll" href="#contact">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="./privacy.html">Privacy</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="./terms.html" >Terms</a>
+                    </li>
+                </ul>
+            </nav>
+
+        </div>
+
         <div class="container">
             <div class="d-flex items row ">
                 <div class="col-lg-6 col-md-12 col-xs-12 pt-md-6">
@@ -61,13 +66,13 @@
                             tailored to students's unique learning needs.
                         </p>
                         <div class="header-button">
-                            <a href="#" class="btn btn-border-filled">Get Started</a>
+                            <a href="#about" class="btn btn-border-filled">Get Started</a>
                             <a href="#contact" class="btn btn-border page-scroll">Contact Us</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-12 col-xs-12 p-0">
-                    <img class="intro-img" src="./static/images/course6.jpg" alt="Intro Image">
+                    <img class="intro-img" src="./static/images/Group.webp" srcset="./static/images/Group.png" alt="Intro Image">
                 </div>
             </div>
         </div>
@@ -89,7 +94,7 @@
             <div class="col-lg-4 col-md-6 col-xs-12 mb-3">
                 <div class="course-item">
                     <div class="course-thumb">
-                        <img src="./static/images/math.jpg" alt="Ib mathematics and science">
+                        <img src="./static/images/math.webp" alt="Ib mathematics and science">
                     </div>
                     <div class="course-details">
                         <div class="course-inner text-center">
@@ -102,7 +107,7 @@
             <div class="col-lg-4 col-md-6 col-xs-12 mb-3">
                 <div class="course-item">
                     <div class="course-thumb">
-                        <img src="./static/images/school.jpg" alt="USA mathematics">
+                        <img src="./static/images/school.webp" alt="USA mathematics">
                     </div>
                     <div class="course-details">
                         <div class="course-inner text-center">
@@ -115,7 +120,7 @@
             <div class="col-lg-4 col-md-6 col-xs-12 mb-3">
                 <div class="course-item">
                     <div class="course-thumb">
-                        <img src="./static/images/science.jpg" alt="Cambridge IGCSE">
+                        <img src="./static/images/science.webp" alt="Cambridge IGCSE">
                     </div>
                     <div class="course-details">
                         <div class="course-inner text-center">
@@ -136,8 +141,74 @@
                 </h2>
                 <div class="desc-text">
                     <p>
-                        Our goal is to make learning mathematics and science accessible and enjoyable.
+                        Our goal is to make learning mathematics and science easier and enjoyable.
                 </div>
+            </div>
+            <div class="steps">
+                <span>How It Works</span>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-number">1</div>
+                    <div class="timeline-content">
+                        <h4>Fill up the forms or call us</h4>
+                        <span>Start by filling up our contact form or giving us a call to discuss your needs and
+                            availability. </span> <br>
+                        <a href="#contact" class="btn btn-link">Contact Us</a>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-number">2</div>
+                    <div class="timeline-content">
+                        <h4>Attend demo class</h4>
+                        <span>Join a free demo class to get a feel of our teaching methods and interact with our
+                            tutors.</span> <br>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-number">3</div>
+                    <div class="timeline-content">
+                        <h4>Schedule a one-on-one training</h4>
+                        <p>After the demo, schedule personalized one-on-one training sessions that fit your
+                            schedule.</p>
+
+                        <ol>
+                            <li>
+                                Concept based tutoring
+                            </li>
+                            <li>
+                                Complete coverage of topics
+                            </li>
+                            <li>
+                                The solution to queries
+                            </li>
+                            <li>
+                                Session by scholars of mathematics and science
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="d-flex tag justify-content-center align-items-center">
+            <div class="d-flex align-items-center">
+                <div class="avatar">
+                    <img src="./static/images/people-fill.svg" width="18" alt="" srcset="">
+                </div>
+                <div> <span class="d-flex">20+</span> <small>Students</small> </div>
+            </div>
+            <div class="d-flex align-items-center">
+                <div class="avatar">
+                    <img src="./static/images/patch-check-fill.svg" width="18" alt="" srcset="">
+                </div>
+                <div> <span class="d-flex">200+</span> <small>Sessions</small> </div>
+
+            </div>
+            <div class="d-flex align-items-center">
+                <div class="avatar">
+                    <img src="./static/images/school.svg" width="18" alt="" srcset="">
+                </div>
+                <div> <span class="d-flex">10+</span> <small>Courses</small> </div>
             </div>
         </div>
     </section>
@@ -154,6 +225,16 @@
 
         <div class="row">
             <div class="col-lg-6 col-md-12">
+                <div class="mb-3 ">
+                    <div class="d-flex align-items-center">
+                        <img src="./static/images/telephone-fill.svg" alt="" class="contacts-icon">
+                        <span class="ms-3">(+254) 714566370</span>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <img src="./static/images/envelope-fill.svg" alt="" class="contacts-icon">
+                        <span class="ms-3">support@ibwisetutor.com</span>
+                    </div>
+                </div>
                 <form id="contactForm" novalidate="true">
                     <div class="row">
                         <div class="col-md-6">
@@ -203,12 +284,13 @@
             <div class="col-lg-1"></div>
             <div class="col-lg-4 col-md-12">
                 <div class="contact-img">
-                    <img src="./static/images/contacts.png" class="img-fluid" alt="Contact Us">
+                    <img src="./static/images/contacts.webp" class="img-fluid" alt="Contact Us">
                 </div>
             </div>
             <div class="col-lg-1"></div>
         </div>
     </section>
+
 
     <section class="footer">
         <div class="container mx-auto">
